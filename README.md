@@ -107,7 +107,7 @@ Resizes terminal.
 
 Change terminal font size.
 
-####
+#### Params
 
   - size: Font size without "px". If you want to set font-size to 16px, just set size to "16".
 
