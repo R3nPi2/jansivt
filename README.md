@@ -3,6 +3,14 @@
 A jQuery Ansi/Ascii Virtual Terminal Emulator.
 Based on the work of Ken Rockot "Rudimentary VT100/Xterm emulator" at https://github.com/krockot/jsvt
 
+## Features
+
+  - ANSI control sequences interpretation.
+  - Scroll buffer.
+  - You can resize previously created terminal.
+  - You can change font size on a previously created terminal.
+  - Intercept keyboard input.
+
 ## Dependencies
 
   - [jQuery](https://jquery.com/)
