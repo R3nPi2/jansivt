@@ -1,6 +1,7 @@
 # jAnsiVT
 
 A jQuery Ansi/Ascii Virtual Terminal Emulator.
+
 Based on the work of Ken Rockot "Rudimentary VT100/Xterm emulator" at https://github.com/krockot/jsvt
 
 ## Features
