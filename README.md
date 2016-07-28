@@ -4,6 +4,8 @@ A jQuery Ansi/Ascii Virtual Terminal Emulator.
 
 Based on the work of Ken Rockot "Rudimentary VT100/Xterm emulator" at https://github.com/krockot/jsvt
 
+<img src="https://raw.githubusercontent.com/R3nPi2/jansivt/master/screenshot.png" />
+
 ## Features
 
   - ANSI control sequences interpretation.
