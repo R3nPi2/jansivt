@@ -1,0 +1,61 @@
+<!--
+/*
+ * jAnsiVT php shell Example
+ * 
+ * Author: R3n Pi2 <r3npi2@gmail.com> https://github.com/R3nPi2/
+ *
+ * IMPORTANT NOTE: Take care where you place that scripts. 
+ *   If public, it opens a remote shell with NO SECURITY to your computer. 
+ */
+-->
+<html>
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type='text/javascript' src='../jansivt.js'></script>
+    <link type="text/css" href="../jansivt.css" rel="stylesheet"></link>
+<head>
+		<script type='text/javascript'>
+			$(document).ready(function() {
+        var terminal_prompt = "\x1b[0m\x1b[31mR\x1b[32m3\x1b[33mn\x1b[34mP\x1b[35mi\x1b[36m2\x1b[37m@\x1b[36mj\x1b[35ma\x1b[34mn\x1b[33ms\x1b[32mi\x1b[31mv\x1b[37mt\x1b[36m:~\x1b[34m$ \x1b[0m";
+        //var terminal_prompt = "\x1b[31mira";
+        var charcode = 0;
+        var command = "";
+        var terminal = jQuery('#terminal').jAnsiVT({
+          cols: 80, 
+          rows: 25, 
+          scrollLines: 30,
+          title: "ALL THESE WORLDS ARE YOURS EXCEPT EUROPA, ATTEMPT NO LANDING THERE",
+          colorScheme: 'gnomeTango',
+          getKeyboard: true,
+          ignoreBold: false,
+          changeWidthOnScroll: true,
+          onChangeTitle: function(title) {
+          },
+          onKeyboardInput: function(k) {
+            if (k.charCodeAt(0) == 10) {
+              charcode = 10;
+            } else if ((charcode == 10) && (k.charCodeAt(0) == 13)) {
+              var xhttp = new XMLHttpRequest();
+              xhttp.onreadystatechange = function() {
+                if (xhttp.readyState == 4 && xhttp.status == 200) {
+                  terminal.write(xhttp.responseText);
+				          terminal.write(terminal_prompt);
+                }
+              };
+              xhttp.open("GET", "http://localhost/shell.php?c="+command+"\n", true);
+              xhttp.send("DUMMY");
+              charcode = 0;
+              command = "";
+            } else if (k.charCodeAt(0) < 128) {
+              command += k;
+            }
+            return;
+          },
+        });
+				terminal.write(terminal_prompt);
+			});
+		</script>
+	</head>
+	<body>
+    <div id="terminal">Loading terminal...</div>
+	</body>
+</html>

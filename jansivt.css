@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url('fonts/UbuntuMono-Regular.ttf');
+  font-weight: normal;
+}
+@font-face {
+  font-family: 'UbuntuMono';
+  src: url('fonts/UbuntuMono-Bold.ttf');
+  font-weight: bold;
+}
+.jansivt-display, .jansivt-scroll {
+  display: inline-block;
+  padding: 0px;
+  background-color: #000000;
+  float:left;
+}
+.jansivt-display pre, .jansivt-scroll pre {
+  font-family: 'UbuntuMono',monospace;
+  display: inline;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.jansivt-scroll {
+  margin-bottom: 0;
+}
+.jansivt-scroll .term-row, .jansivt-display .term-row {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+}
+
+.jansivt-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow-y: auto;
+}
+
+/*
+ * @todo: place scrollbar outside .jansivt-wrapper 
+ */
+
+/*
+.jansivt-wrapper::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  background-color: #F5F5F5;
+}
+
+.jansivt-wrapper::-webkit-scrollbar
+{
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+.jansivt-wrapper::-webkit-scrollbar-thumb
+{
+  background-color: #000000;
+  border: 2px solid #555555;
+}
+*/

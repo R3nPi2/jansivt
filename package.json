@@ -1,0 +1,21 @@
+{
+  "name": "jAnsiVT",
+  "namelower": "jansivt",
+  "version": "0.1.1",
+  "description": "jQuery Ansi/Ascii Virtual Terminal Emulator",
+  "readme": "README.md",
+  "bugs": {
+    "url": "https://github.com/R3nPi2/jansivt/issues",
+    "email": "r3npi2@gmail.com"
+  },
+  "author": { 
+    "name" : "R3n Pi2",
+    "email" : "r3npi2@gmail.com",
+    "url" : "https://github.com/R3nPi2/"
+  },
+  "repository" : { 
+    "type" : "git"
+    "url" : "https://github.com/R3nPi2/jansivt.git"
+  },
+  "license": "SEE LICENSE FILE",
+}

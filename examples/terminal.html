@@ -1,0 +1,212 @@
+<!--
+/*
+ * jAnsiVT 80x25 terminal example
+ * 
+ * Author: R3n Pi2 <r3npi2@gmail.com> https://github.com/R3nPi2/
+ *
+ */
+-->
+<html>
+	<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type='text/javascript' src='../jansivt.js'></script>
+    <link type="text/css" href="../jansivt.css" rel="stylesheet"></link>
+		<script type='text/javascript'>
+	  $(document).ready(function() {
+      var terminal = jQuery('#terminal').jAnsiVT({
+        cols: 80, 
+        rows: 25, 
+        scrollLines: 30,
+        title: "ALL THESE WORLDS ARE YOURS EXCEPT EUROPA, ATTEMPT NO LANDING THERE",
+        colorScheme: 'gnomeTango',
+        getKeyboard: false,
+        ignoreBold: false,
+        changeWidthOnScroll: true,
+        onChangeTitle: function(title) {
+        },
+        onKeyboardInput: function(k) {
+        },
+      });
+      var loremIpsum = [
+        'Lorem ipsum dolor sit amet.',
+        'Pellentesque malesuada justo at neque aliquam.',
+        'Donec libero tortor, rhoncus vel purus ut.',
+        'Nam nibh est, cursus ut ex quis.',
+        'Mauris ullamcorper placerat metus.',
+        'Duis rutrum risus velit, in egestas magna commodo non.',
+        'In in condimentum lectus.',
+        'Fusce sed varius tellus.',
+        'Maecenas posuere congue enim non placerat.',
+        'Quisque euismod nunc eget mattis gravida.',
+      ]
+      var rand = Math.floor((Math.random() * 10));
+      var timeout = 0;
+      var counter = 0;
+      while (counter < 42) {
+        setTimeout(function(){
+          rand = Math.floor((Math.random() * 10));
+          terminal.write(loremIpsum[rand]+"\n");
+        },timeout);
+        timeout += 100;
+        counter++;
+      }
+      setTimeout(function(){
+        terminal.write(loremIpsum[rand]);
+      },timeout);
+
+      timeout += 1000;
+      counter = 0;
+      terminal.write("\x1b[?25l");
+      while (counter < 3) {
+        setTimeout(function(){
+          terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+          terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |   \x1b[34m|");
+          terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+          terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+        },timeout);
+        timeout += 80;
+        setTimeout(function(){
+          terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+          terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |   \x1b[34m|");
+          terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+          terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+        },timeout);
+        timeout += 80;
+        setTimeout(function(){
+          terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+          terminal.write("\x1b[23;62H\x1b[K\x1b[31m    .|   \x1b[34m|");
+          terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+          terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+        },timeout);
+        timeout += 80;
+        setTimeout(function(){
+          terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+          terminal.write("\x1b[23;62H\x1b[K\x1b[31m    '|   \x1b[34m|");
+          terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+          terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+        },timeout);
+        timeout += 80;
+        setTimeout(function(){
+          terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+          terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |-  \x1b[34m|");
+          terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+          terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+        },timeout);
+        timeout += 80;
+        setTimeout(function(){
+          terminal.write("\x1b[22;62H\x1b[K\x1b[31m       0_\x1b[34m0");
+          terminal.write("\x1b[23;62H\x1b[K\x1b[31m      /   \x1b[34m)");
+          terminal.write("\x1b[24;62H\x1b[K\x1b[31m     /) \x1b[34m/ |");
+          terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+        },timeout);
+        timeout += 80;
+        setTimeout(function(){
+          terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0.   \x1b[34m0");
+          terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |   \x1b[34m(");
+          terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m| \\");
+          terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+        },timeout);
+        timeout += 80;
+        counter++;
+      }
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |   \x1b[34m|");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |   \x1b[34m|");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m    .|   \x1b[34m|");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m    '|   \x1b[34m|");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0   \x1b[34m0");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |-  \x1b[34m|");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\ \x1b[34m/ \\");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m       0_\x1b[34m0");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m      /   \x1b[34m)");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m     /) \x1b[34m/ |");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0.   \x1b[34m0");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |   \x1b[34m_(");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\   \x1b[34m]");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0      \x1b[34mo");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |    \x1b[34m-/");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\   \x1b[34m(");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0      ");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |    \x1b[34m-._o");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\    \x1b[34m/");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0      ");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |   ");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\     \x1b[34m.^_o");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m---------------------");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m     0      ");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |   ");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\      \x1b[34m___o");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m-------------------\x1b[31m--");
+      },timeout);
+      timeout += 1100;
+      setTimeout(function(){
+        //Bell
+		    terminal.write("\x07");
+      },timeout);
+      timeout += 80;
+      setTimeout(function(){
+        terminal.write("\x1b[18;61H\x1b[K\x1b[32m*-----------*");
+        terminal.write("\x1b[19;61H\x1b[K\x1b[32m| \x1b[37m-jAnsiVT- \x1b[32m|");
+        terminal.write("\x1b[20;61H\x1b[K\x1b[32m| \x1b[37mby \x1b[31mR\x1b[32m3\x1b[33mn\x1b[34mP\x1b[35mi\x1b[36m2 \x1b[32m|");
+        terminal.write("\x1b[21;61H\x1b[K\x1b[32m*-----------*");
+        terminal.write("\x1b[22;62H\x1b[K\x1b[31m   \\ 0 /   ");
+        terminal.write("\x1b[23;62H\x1b[K\x1b[31m     |   ");
+        terminal.write("\x1b[24;62H\x1b[K\x1b[31m    / \\      \x1b[34m___o");
+        terminal.write("\x1b[25;59H\x1b[K\x1b[37m-------------------\x1b[31m--");
+      },timeout);
+
+		});
+		</script>
+	</head>
+	<body>
+    <div id="terminal">Loading terminal...</div>
+	</body>
+</html>
+

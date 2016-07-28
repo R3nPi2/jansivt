@@ -1,0 +1,28 @@
+{
+  "name": "jansivt",
+  "version": "0.1.1",
+  "description": "jQuery Ansi/Ascii Virtual Terminal Emulator",
+  "homepage": "https://github.com/R3nPi2/jansivt",
+  "authors": [
+    { "name" : "R3n Pi2", "email" : "r3npi2@gmail.com", "homepage" : "https://github.com/R3nPi2/" }
+  ],
+  "repository": { 
+    "type": "git",
+    "url": "git://github.com/R3nPi2/jansivt.git"
+  },  
+  "main": "jansivt.js",
+  "keywords": [
+    "vt100 emulator",
+    "virtual terminal emulator",
+    "jquery virtual terminal emulator",
+    "ansi ascii virtual terminal"
+  ],
+  "license": "SEE LICENSE FILE",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
