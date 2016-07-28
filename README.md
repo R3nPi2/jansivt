@@ -20,7 +20,7 @@ Based on the work of Ken Rockot "Rudimentary VT100/Xterm emulator" at https://gi
 
 ## Installation
 
-  - **Bower**: bower install https://github.com/R3nPi2/jansivt.git
+  - **Bower**: `bower install https://github.com/R3nPi2/jansivt.git`
 
     or
 
