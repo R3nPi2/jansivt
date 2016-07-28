@@ -70,7 +70,7 @@ Create a new terminal calling `$(selector).jAnsiVT(options)`.
 ### Options
 
 | Option        | Description           | Type           | Default  |
-| ------------- |:-------------:| -----:|-----:|
+| ------------- |:------------- |:-----:|-----:|
 | cols     | Terminal columns | Number | 80  |
 | rows     | Terminal rows | Number | 25  |
 | scrollSize     | Number of lines that will be saved on scroll buffer | Number | 100  |
