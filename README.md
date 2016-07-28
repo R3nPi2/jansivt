@@ -171,7 +171,7 @@ There are several color schemes defined, but you can override them and set your 
 
 ### Predefined color schemes
 
-Here is the list of color schemes that you can set into `colorScheme` option:
+Here is the list of color schemes that you can set `colorScheme` option to:
 
   - gnomeTango
   - gnomeLinux
