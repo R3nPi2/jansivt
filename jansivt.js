@@ -768,34 +768,38 @@
           jansivt.onKeyboardInput("\x1b[1~");
           return "\x1b[1~";
         case 'LeftArrow':
-          if(jansivt.applicationKeyMode)
+          if(jansivt.applicationKeyMode) {
             jansivt.write("\x1bOD");
             jansivt.onKeyboardInput("\x1bOD");
             return "\x1bOD";
+	  }
           jansivt.write("\x1b[D");
           jansivt.onKeyboardInput("\x1b[D");
           return "\x1b[D";
         case 'UpArrow':
-          if(jansivt.applicationKeyMode)
+          if(jansivt.applicationKeyMode) {
             jansivt.write("\x1bOA");
             jansivt.onKeyboardInput("\x1bOA");
             return "\x1bOA";
+	  }
           jansivt.write("\x1b[A");
           jansivt.onKeyboardInput("\x1b[A");
           return "\x1b[A";
         case 'RightArrow':
-          if(jansivt.applicationKeyMode)
+          if(jansivt.applicationKeyMode) {
             jansivt.write("\x1bOC");
             jansivt.onKeyboardInput("\x1bOC");
             return "\x1bOC";
+	  }
           jansivt.write("\x1b[C");
           jansivt.onKeyboardInput("\x1b[C");
           return "\x1b[C";
         case 'DownArrow':
-          if(jansivt.applicationKeyMode)
+          if(jansivt.applicationKeyMode) {
             jansivt.write("\x1bOB");
             jansivt.onKeyboardInput("\x1bOB");
             return "\x1bOB";
+	  }
           jansivt.write("\x1b[B");
           jansivt.onKeyboardInput("\x1b[B");
           return "\x1b[B";
