@@ -658,9 +658,9 @@
         //document.styleSheets[0].removeRule();
 
         // Just added at the end
-        document.styleSheets[0].addRule(".jansivt-display pre, .jansivt-scroll pre", "font-size:"+jansivt.settings.fontSize+"px;height:"+(jansivt.settings.fontSize+2)+"px;width:"+(jansivt.settings.fontSize/2)+"px");
-        document.styleSheets[0].addRule(".jansivt-display .term-row, .jansivt-scroll .term-row", "max-height:"+(jansivt.settings.fontSize+2)+"px");
-        document.styleSheets[0].addRule(".jansivt-display, .jansivt-scroll", "line-height:"+(jansivt.settings.fontSize+2)+"px");
+        document.styleSheets[0].insertRule(".jansivt-display pre, .jansivt-scroll pre { font-size:"+jansivt.settings.fontSize+"px;height:"+(jansivt.settings.fontSize+2)+"px;width:"+(jansivt.settings.fontSize/2)+"px}", 0);
+        document.styleSheets[0].insertRule(".jansivt-display .term-row, .jansivt-scroll .term-row { max-height:"+(jansivt.settings.fontSize+2)+"px }", 0);
+        document.styleSheets[0].insertRule(".jansivt-display, .jansivt-scroll { line-height:"+(jansivt.settings.fontSize+2)+"px }", 0);
 
         var max_height = jansivt.rows*(jansivt.settings.fontSize+2);
         var max_width = jansivt.cols*(jansivt.settings.fontSize/2);
@@ -1384,9 +1384,9 @@
       jansivt.scroll.css('background-color',jansivt.settings.vtColors[0]);
 
       // This will override default stylesheet properties
-      document.styleSheets[0].addRule(".jansivt-display pre, .jansivt-scroll pre", "font-size:"+jansivt.settings.fontSize+"px;height:"+(jansivt.settings.fontSize+2)+"px;width:"+(jansivt.settings.fontSize/2)+"px");
-      document.styleSheets[0].addRule(".jansivt-display .term-row, .jansivt-scroll .term-row", "max-height:"+(jansivt.settings.fontSize+2)+"px");
-      document.styleSheets[0].addRule(".jansivt-display, .jansivt-scroll", "line-height:"+(jansivt.settings.fontSize+2)+"px");
+      document.styleSheets[0].insertRule(".jansivt-display pre, .jansivt-scroll pre { font-size:"+jansivt.settings.fontSize+"px;height:"+(jansivt.settings.fontSize+2)+"px;width:"+(jansivt.settings.fontSize/2)+"px }", 0);
+      document.styleSheets[0].insertRule(".jansivt-display .term-row, .jansivt-scroll .term-row { max-height:"+(jansivt.settings.fontSize+2)+"px }", 0);
+      document.styleSheets[0].insertRule(".jansivt-display, .jansivt-scroll { line-height:"+(jansivt.settings.fontSize+2)+"px }", 0);
 
       // Intercept keyboard
       if (jansivt.settings.getKeyboard) {
