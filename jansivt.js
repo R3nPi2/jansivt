@@ -658,9 +658,9 @@
         //document.styleSheets[0].removeRule();
 
         // Just added at the end
-        document.styleSheets[0].addRule(".jansivt-display pre, .jansivt-scroll pre", "font-size:"+jansivt.settings.fontSize+"px;height:"+(jansivt.settings.fontSize+2)+"px;width:"+(jansivt.settings.fontSize/2)+"px");
-        document.styleSheets[0].addRule(".jansivt-display .term-row, .jansivt-scroll .term-row", "max-height:"+(jansivt.settings.fontSize+2)+"px");
-        document.styleSheets[0].addRule(".jansivt-display, .jansivt-scroll", "line-height:"+(jansivt.settings.fontSize+2)+"px");
+        document.styleSheets[0].insertRule(".jansivt-display pre, .jansivt-scroll pre { font-size:"+jansivt.settings.fontSize+"px;height:"+(jansivt.settings.fontSize+2)+"px;width:"+(jansivt.settings.fontSize/2)+"px}", 0);
+        document.styleSheets[0].insertRule(".jansivt-display .term-row, .jansivt-scroll .term-row { max-height:"+(jansivt.settings.fontSize+2)+"px }", 0);
+        document.styleSheets[0].insertRule(".jansivt-display, .jansivt-scroll { line-height:"+(jansivt.settings.fontSize+2)+"px }", 0);
 
         var max_height = jansivt.rows*(jansivt.settings.fontSize+2);
         var max_width = jansivt.cols*(jansivt.settings.fontSize/2);
@@ -768,34 +768,38 @@
           jansivt.onKeyboardInput("\x1b[1~");
           return "\x1b[1~";
         case 'LeftArrow':
-          if(jansivt.applicationKeyMode)
+          if(jansivt.applicationKeyMode) {
             jansivt.write("\x1bOD");
             jansivt.onKeyboardInput("\x1bOD");
             return "\x1bOD";
+	  }
           jansivt.write("\x1b[D");
           jansivt.onKeyboardInput("\x1b[D");
           return "\x1b[D";
         case 'UpArrow':
-          if(jansivt.applicationKeyMode)
+          if(jansivt.applicationKeyMode) {
             jansivt.write("\x1bOA");
             jansivt.onKeyboardInput("\x1bOA");
             return "\x1bOA";
+	  }
           jansivt.write("\x1b[A");
           jansivt.onKeyboardInput("\x1b[A");
           return "\x1b[A";
         case 'RightArrow':
-          if(jansivt.applicationKeyMode)
+          if(jansivt.applicationKeyMode) {
             jansivt.write("\x1bOC");
             jansivt.onKeyboardInput("\x1bOC");
             return "\x1bOC";
+	  }
           jansivt.write("\x1b[C");
           jansivt.onKeyboardInput("\x1b[C");
           return "\x1b[C";
         case 'DownArrow':
-          if(jansivt.applicationKeyMode)
+          if(jansivt.applicationKeyMode) {
             jansivt.write("\x1bOB");
             jansivt.onKeyboardInput("\x1bOB");
             return "\x1bOB";
+	  }
           jansivt.write("\x1b[B");
           jansivt.onKeyboardInput("\x1b[B");
           return "\x1b[B";
@@ -1384,9 +1388,9 @@
       jansivt.scroll.css('background-color',jansivt.settings.vtColors[0]);
 
       // This will override default stylesheet properties
-      document.styleSheets[0].addRule(".jansivt-display pre, .jansivt-scroll pre", "font-size:"+jansivt.settings.fontSize+"px;height:"+(jansivt.settings.fontSize+2)+"px;width:"+(jansivt.settings.fontSize/2)+"px");
-      document.styleSheets[0].addRule(".jansivt-display .term-row, .jansivt-scroll .term-row", "max-height:"+(jansivt.settings.fontSize+2)+"px");
-      document.styleSheets[0].addRule(".jansivt-display, .jansivt-scroll", "line-height:"+(jansivt.settings.fontSize+2)+"px");
+      document.styleSheets[0].insertRule(".jansivt-display pre, .jansivt-scroll pre { font-size:"+jansivt.settings.fontSize+"px;height:"+(jansivt.settings.fontSize+2)+"px;width:"+(jansivt.settings.fontSize/2)+"px }", 0);
+      document.styleSheets[0].insertRule(".jansivt-display .term-row, .jansivt-scroll .term-row { max-height:"+(jansivt.settings.fontSize+2)+"px }", 0);
+      document.styleSheets[0].insertRule(".jansivt-display, .jansivt-scroll { line-height:"+(jansivt.settings.fontSize+2)+"px }", 0);
 
       // Intercept keyboard
       if (jansivt.settings.getKeyboard) {
